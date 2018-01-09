@@ -56,14 +56,21 @@
     }
 }
 - (IBAction)saveBtn:(id)sender {
-    //重新赋值
-    _contant.name = _editPeopleField.text;
-    _contant.phone = _editPhoneField.text;
-    
-    if (_block) {
-        _block(); //I don't Know
+    if (_editPhoneField.text.length == 11) {
+        //重新赋值
+        _contant.name = _editPeopleField.text;
+        _contant.phone = _editPhoneField.text;
+        
+        if (_block) {
+            _block(); //I don't Know
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        UIAlertController * allertController = [UIAlertController alertControllerWithTitle:@"手机号格式不正确" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [allertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:allertController animated:YES completion:nil];
     }
-    [self.navigationController popViewControllerAnimated:YES];
+   
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {

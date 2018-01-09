@@ -40,7 +40,7 @@
     self.tableView.tableFooterView = [[UITableView alloc]init];
     //  取消分割线
 //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    self.tableView.separatorColor = [UIColor purpleColor];
     
     // self.clearsSelectionOnViewWillAppear = NO;
     

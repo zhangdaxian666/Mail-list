@@ -15,4 +15,6 @@
 
 + (instancetype)contanctWithName:(NSString *)name phone:(NSString *)phone;
 
++ (BOOL)checkPhone:(NSString *)phoneNumber;
+//+ (BOOL)checkPhone:(NSString *)phoneNumber message:(NSString *)message;
 @end
